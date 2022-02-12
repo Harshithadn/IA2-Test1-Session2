@@ -1,0 +1,124 @@
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8f8: file p4final.c, line 47.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4final.c:47
+47  {
+(gdb) s
+48    int length = input_array_size();
+(gdb) n
+Enter the length of the array:
+5
+49    int data[length];
+(gdb) n
+50    input_array(length, data);
+(gdb) s
+input_array (n=5, a=0x7ffec0769130) at p4final.c:12
+12    printf("Enter all values of the array:\n");
+(gdb) n
+Enter all values of the array:
+13    for (int i = 0; i < n; i++)
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+4
+13    for (int i = 0; i < n; i++)
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+6
+13    for (int i = 0; i < n; i++)
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) 
+n
+13    for (int i = 0; i < n; i++)
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+13    for (int i = 0; i < n; i++)
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+13    for (int i = 0; i < n; i++)
+(gdb) n
+17  }
+(gdb) n
+main () at p4final.c:51
+51    int res = sum_composite_numbers(length, data);
+(gdb) s
+sum_composite_numbers (n=5, a=0x7ffec0769130) at p4final.c:30
+30    int sum = 0;
+(gdb) n
+31    for (int i = 0; i < n; i++)
+(gdb) n
+33      if (is_composite(a[i]))
+(gdb) n
+35        sum += a[i];
+(gdb) n
+31    for (int i = 0; i < n; i++)
+(gdb) n
+33      if (is_composite(a[i]))
+(gdb) n
+35        sum += a[i];
+(gdb) n
+31    for (int i = 0; i < n; i++)
+(gdb) n
+33      if (is_composite(a[i]))
+(gdb) n
+35        sum += a[i];
+(gdb) n
+31    for (int i = 0; i < n; i++)
+(gdb) 
+33      if (is_composite(a[i]))
+(gdb) n
+31    for (int i = 0; i < n; i++)
+(gdb) n
+33      if (is_composite(a[i]))
+(gdb) n
+31    for (int i = 0; i < n; i++)
+(gdb) n
+38    return sum;
+(gdb) n
+39  }
+(gdb) s
+main () at p4final.c:52
+52    output(res);
+(gdb) n
+1723585034
+53    return 0;
+(gdb) p n
+No symbol "n" in current context.
+(gdb) p length
+$1 = 5
+(gdb) p a[n]
+No symbol "a" in current context.
+(gdb) p n
+No symbol "n" in current context.
+(gdb) p data
+$2 = {4, 6, 1723585024, -363053071, -1065971296}
+(gdb) n
+54  }(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 126] will be killed.
+
+Quit anyway? (y or n) y
